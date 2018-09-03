@@ -38,7 +38,7 @@ public class FileServerHandler extends ChannelInboundHandlerAdapter {
         }catch (IOException e){
             buildTransferObjectOnException(transferObject,e.getMessage());
         }
-        ctx.write(transferObject);
+        ctx.writeAndFlush(transferObject);
     }
 
     public void upload(TransferObject transferObject) throws IOException {
